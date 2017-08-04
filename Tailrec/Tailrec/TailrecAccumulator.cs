@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace Tailrec
 {
@@ -12,26 +10,22 @@ namespace Tailrec
             public T2 T2 { get; set; }
         }
 
-        private readonly List<ParametersInput> _accumulated = new List<ParametersInput>(5);
+        private ParametersInput _accumulated;
+        private readonly Func<T1, T2, Action<T1, T2>, bool> _input;
         private readonly Func<T1, T2, TResult> _output;
 
-        public Action<T1, T2> Head => Feed;
-
-        public Func<T1, T2, bool> Reccurent { get; set; }
-
-        public TailrecAccumulator(Func<T1, T2, TResult> output)
+        public TailrecAccumulator(Func<T1, T2, Action<T1, T2>, bool> input, Func<T1, T2, TResult> output)
         {
+            _input = input;
             _output = output;
         }
 
         public TResult Accumulator(T1 t1, T2 t2)
         {
-            while (Reccurent(t1, t2))
+            while (_input(t1, t2, Feed))
             {
-                ParametersInput last = _accumulated.Last();
-
-                t1 = last.T1;
-                t2 = last.T2;
+                t1 = _accumulated.T1;
+                t2 = _accumulated.T2;
             }
 
             return _output(t1, t2);
@@ -39,7 +33,8 @@ namespace Tailrec
 
         private void Feed(T1 t1, T2 t2)
         {
-            _accumulated.Add(new ParametersInput { T1 = t1, T2 = t2 });
+            _accumulated.T1 = t1;
+            _accumulated.T2 = t2;
         }
     }
 }
