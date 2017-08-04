@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tailrec", "Tailrec\Tailrec.csproj", "{380EE61C-F940-4514-B4F0-3A0785F476F4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tailrec.Demo", "Tailrec.Demo\Tailrec.Demo.csproj", "{45A1ABCE-8338-4355-87E7-53B38F070003}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{380EE61C-F940-4514-B4F0-3A0785F476F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{380EE61C-F940-4514-B4F0-3A0785F476F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{380EE61C-F940-4514-B4F0-3A0785F476F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45A1ABCE-8338-4355-87E7-53B38F070003}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45A1ABCE-8338-4355-87E7-53B38F070003}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45A1ABCE-8338-4355-87E7-53B38F070003}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45A1ABCE-8338-4355-87E7-53B38F070003}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
